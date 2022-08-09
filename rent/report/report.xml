@@ -1,0 +1,24 @@
+<odoo>
+<data>
+
+
+
+         <!--  "action" appointment report_action-->
+        <record model="ir.actions.report" id="invoice_reports_action">
+            <field name="name"> invoice report</field>
+            <field name="model">product.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">rent.invoice_report_detail</field>
+            <field name="report_file">rent.invoice_report_detail</field>
+            <field name="binding_model_id" ref="rent.model_product_order"/>
+            <field name="binding_type" >report</field>
+        </record>
+
+
+
+
+
+
+
+</data>
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="invoice_report_detail">
+        <t t-call="web.external_layout">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <!-- <t t-call="om_hospital.report_patient_cards"/> -->
+                    <h2>invoice for customer</h2>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><strong>customer Name : </strong><t t-esc="doc.customer_id.name"/></td>
+                            </tr>
+
+
+                            <tr t-foreach="doc.product_order_line_ids" t-as="line" style="border:1px solid black">
+                                <td><strong>start date : </strong><t t-esc="line.start_date"/></td>
+                                <td><strong>end date : </strong><t t-esc="line.end_date"/></td>
+                                <td><strong>Daily Rent : </strong><t t-esc="line.daily_rent"/></td>
+                                <td><strong>Total Days : </strong><t t-esc="line.total_days"/></td>
+                                <td><strong>Total Cost : </strong><t t-esc="line.total_cost"/></td>
+                                        </tr>
+                        </tbody>
+                    </table>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
